@@ -4,7 +4,26 @@
 
     $errors = array();
 
+    $firstname = '';
+    $lastname = '';
+    $username = '';
+
+
     if($_POST) {
+
+        if(isset($_POST['firstname'])) {
+            $firstname = $_POST['firstname'];
+        }
+
+        if(isset($_POST['lastname'])) {
+            $lastname = $_POST['lastname'];
+        }
+
+        if(isset($_POST['username'])) {
+            $username = $_POST['username'];
+        }
+
+
 
         print_r($_POST);
         if($_POST['password'] != $_POST['password2']) {
@@ -30,7 +49,7 @@
                 "\"{$_POST['username']}\", \"{$_POST['password']}\") " ;
             echo $insert;
             $mysqli->query($insert);
-            if($mysqli->errno {
+            if($mysqli->errno) {
                 echo "there was an error: " . $mysqli->error;
             }
         }
@@ -52,9 +71,9 @@
 <body>
     <div><?php print_r($errors); ?></div>
     <form action="index.php" method="POST">
-        First: <input type="text" name="firstname"><br>
-        Last: <input type="text" name="lastname"><br>
-        Username: <input type="text" name="username"><br>
+        First: <input type="text" name="firstname" value="<?php echo $firstname; ?>"><br>
+        Last: <input type="text" name="lastname" value="<?php echo $lastname; ?>"><br>
+        Username: <input type="text" name="username" value="<?php echo $username; ?>"><br>
         Password: <input type="text" name="password"><br>
         Password 2: <input type="text" name="password2"><br>
 
