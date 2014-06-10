@@ -69,7 +69,10 @@
     <title></title>
 </head>
 <body>
-    <div><?php print_r($errors); ?></div>
+
+    <?php include('header.php');?>
+
+
     <form action="index.php" method="POST">
         First: <input type="text" name="firstname" value="<?php echo $firstname; ?>"><br>
         Last: <input type="text" name="lastname" value="<?php echo $lastname; ?>"><br>
