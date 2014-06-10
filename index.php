@@ -30,8 +30,8 @@
                 "\"{$_POST['username']}\", \"{$_POST['password']}\") " ;
             echo $insert;
             $mysqli->query($insert);
-            if($mysqli->errno()) {
-                echo "there was an error: " . $mysqli->error();
+            if($mysqli->errno {
+                echo "there was an error: " . $mysqli->error;
             }
         }
 
